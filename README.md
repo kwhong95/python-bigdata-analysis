@@ -5,7 +5,7 @@
 ## 목차
 ### Part #1 빅데이터 분석 - 이해
 
-- [Chapter #1] 4차 산업혁명과 데이터 과학
+- [[Chapter #1](https://github.com/kwhong95/python-bigdata-analysis/tree/master/Chapter1)] 4차 산업혁명과 데이터 과학
 - [Chapter #2] 빅데이터의 이해와 활용
 - [Chapter #3] 데이터 과학 기반의 빅데이터 분석
 
