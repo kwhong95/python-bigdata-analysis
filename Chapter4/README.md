@@ -151,3 +151,139 @@ from 패키지명 import 모듈명
 | 파일 읽기(2) | 파일 모드 'r' <br> readlines() |
 | 파일 읽기(3) | 파일 모드 'r' <br> read() |
 | 파일 처리 후 파일 닫기(자동 처리) | with open() <br> as 파일 객체: |
+
+## 07. 데이터 분석을 위한 주요 라이브러리
+> 데이터 분석 작업에 많이 사용하는 numpy, pandas, matplotlib를 알아보자.
+
+### 1. numpy
+> 수치 데이터를 다루기 위한 라이브러리로 다차원 배열 자료구지인 ndarray를 지원하며 선형대수계산 등 행렬 연산에 주로 사용  
+기본 설치 라이브러리가 아니므로 pip(파이썬 패키지 관리 시스템) 명령으로 설치한 후에 임포트한다.
+
+```
+pip3 install numpy
+```
+
+#### numpy 임포트
+> numpy를 np라는 이름으로 대신 나타내서 임포트하는게 일반적
+```py
+import numpy as np
+```
+
+### numpy 버전 확인
+> 앞뒤에 각각 __를 입력하는 것에 주의
+```py
+np.__version__
+```
+
+#### numpy 사용 방법
+| 종류 | 형식 |
+| --- | --- |
+| 리스트를 이용하여 numpy 생성 | np.array() |
+| 값의 범위를 지정하여 numpy 생성 | np.arange(시작값, 끝값, 간격) |
+| 구조를 지정하여 numpy 생성 | np.array().reshape() |
+| 초기값과 구조를 지정하여 numpy 생성 | 코드 참조 |
+| 초기값과 구조를 지정하여 numpy 생성 | " |
+| numpy 슬라이싱 | " |
+| numpy 사칙 연산 | " |
+| numpy 행렬곱 연산 | np.dot() |
+
+-----
+
+### 2. pandas
+> 데이터 분석에서 자주사용하는 테이블 형태를 다룰 수 있는 라이브러리  
+1차원 자료구조인 Series, 2차원 자료구조인 DataFrame, 3차원 자료구지인 Panel을 지원하며 그중 Series, DataFrame을 많이 사용
+```
+pip3 install pandas
+```
+
+#### pandas 임포트
+```py
+import pandas as pd
+```
+
+#### pandas 버전 확인
+
+```py
+pd.__version__
+```
+
+#### Series 자료형
+> 리스트를 원소로 생성하는 1차원 자료구조  
+ 원소 인덱스는 0부터 시작하는 정수를 기본으로 사용하며 원하는 값을 추가로 생성 가능
+
+| 종류 | 형식 |
+| --- | --- |
+| Series 생성 | pd.Series() |
+| 리스트를 이용하여 Series를 생성 | " |
+| 값을 이용하여 Serires 생성 | " |
+| 인덱스를 지정하여 Series 생성 | " |
+| Series 인덱싱 | " |
+| Series 슬라이싱 | " |
+| Series 인덱스 구하기 | " |
+| Series 값 구하기 | " |
+| Series 원소가 숫자이면 덧셈 수행 | + |
+| Series 원소가 문자열이면 문자열 연결 수행 | + |
+
+----
+#### DataFrame 자료형
+> 행과 열이 있는 테이블 형태의 2차원 자료구조
+
+| 종류 | 형식 |
+| --- | --- |
+| DataFrame 생성 | pd.DataFrame() |
+| 딕셔너리를 이용하여 DataFrame 생성 | " |
+| 리스트를 이용하여 DataFrame 생성 1 | index ,columns |
+| 리스트를 이용하여 DataFrame 생성 2 | data_df |
+| DataFrame 열 이름 설정 | columns |
+| DataFrame 조회 | head(n), tail(n), ['columns'] |
+| CSV 파일로 저장 | to_csv |
+| CSV 파일을 DataFrame으로 불러오기 | read_csv |
+-----
+
+### 3. matplotlib
+> 라인플롯 차트, 바 차트, 파이 차트, 히스토그램, 산점도 등의 다양한 차트 그리기를 지원하는 라이브러리  
+데이터 탐색이나 분석 결과를 시각화 하기 위해 많이 사용  
+
+```
+pip3 install matplotlib
+```
+
+#### matplotlib 임포트
+```py
+import matplotlib
+```
+#### matplotlib 버전 확인
+```py
+matplotlib.__version__
+```
+#### pyplot 모듈 임포트하기
+```py
+import matplotlib.pyplot as plt
+```
+
+#### pyplot 라인플롯 차트 그리기
+| 단계 | 형식 |
+| --- | --- |
+| 1️⃣ 데이터 준비 | | 
+| 2️⃣ x축과 y축 데이터를 지정하여 라인플롯 생성 | plt.plot(x, y) |
+| 3️⃣ 차트 제목 설정 | plt.title() | 
+| 4️⃣ x축 레이블 설정 | plt.xlabel() |
+| 5️⃣ y축 레이블 설정 | plt.ylabel() | 
+| 6️⃣ 라인플롯 표시 | plt.show() |
+-----
+
+#### pyplot 바 차트 그리기
+| 단계 | 형식 |
+| --- | --- |
+| 1️⃣ 데이터 준비 | |
+| 2️⃣ x축과 y축 데이터를 지정하여 바 차트 생성 | plt.bar(x,y) |
+| 3️⃣ 차트 제목 설정 | plt.title() |
+| 4️⃣ x축 레이블 설정 | plt.xlabel() |
+| 5️⃣ y축 레이블 설정 | plt.ylabel() |
+| 6️⃣ 눈금 이름 리스트 생성 |  |
+| 7️⃣ 바 차트의 x축 눈금 이름 설정 | plt.xticks() |
+| 8️⃣ 범례 설정 | plt.legend() |
+| 9️⃣ 바 차트 표시 | plt.show() |
+
+-----
+
