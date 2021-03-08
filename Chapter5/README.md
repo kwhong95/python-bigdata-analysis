@@ -85,3 +85,18 @@
   + `response.getcode()` : 요청 처리에 대한 응답 상태를 확인하는 response 객체의 맴버 함수로 상태코드가 200이면 요청 처리 성공을 나타낸다.
   + `datatime.datatime.now()` : 현재 시간을 구하는 함수
   + `response.read().decode('utf-8')`: utf-8 형식으로 문자열 디코딩
+
+3. [CODE 2]네이버 뉴스 검색 url을 만들고 [CODE 1]의 getRequestUrl(url)을 호출하면 반환받은 응답 데이터를 파이썬 json 형식으로 반환하는 부분
+- **매개 변수**
+  + node: 네이버 검색 API를 이용하여 검색할 대상 노드(news, blog, cafearticle, movie, shop 등)
+  + srcText: 검색어
+  + page_start: 검색 시작 위치(1 - 1000)
+  + display: 출력 건수(10 - 100)
+- **지역 변수**
+  + base: 검색 url의 기본 주소
+  + node: 검색 대상에 따른 json 파일 이름
+  + parameter: url에 추가할 검색어와 검색 시작 위치, 출력 건수 등의 매개변수
+  + responseDecode: `getRequestUrl(url)`을 호출하여 반환 받은 응답 객체(utf-8로 디코드)
+- **메서드**
+  + `getRequestUrl(url)`: [CODE1]을 호출하여 url 요청에 대한 응답을 받음
+  + `json.loads(responseDecode)`: 응답 객체를 파이썬이 처리할 수 있는 JSON 형식으로 반환
