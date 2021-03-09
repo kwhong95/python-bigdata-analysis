@@ -14,7 +14,7 @@
 > 웹은 일반적으로 HTTP 통신을 사용한다. 사용자가 데이터를 가지고 있는 서버의 url에 접속하여 수집할 데이터에 HTTP 요청을 하면 서버가 그에 대한 응답을 JSON 또는 XML 형식으로 보내는 방식이다. 이 때 사용하는 것이 웹 API이며, 지도, 검색,주가, 환율 등 다양한 정보를 가지고 있는 웹 사이트의 기능을 외부에서 쉽게 사용할 수 있도록 사용 절차와 규약을 정의한 것
 
 ### 2. 네이버 개발자 가입
-#### 1️⃣ 네이버 개발자 센터 접속하기
+#### 네이버 개발자 센터 접속하기
 1. [네이버 개발자 센터 주소](https://developers.naver.com) 접속  
 - [서비스 API](https://developers.naver.com/products/datalab/) 접속
 
@@ -66,8 +66,8 @@
   + jsonFile : JSON 파일에 저장할 데이터를 담은 객체
 - **메서드**
   + input('검색어를 입력하세요: '): 사용자로부터 입력을 받는다.
-  + getNaverSearch(node, srcText, 1, 100) : 1부터 100개의 검색 결과를 처리한다.([CODE2])
-  + getPostData(): 검색 결과 한 개를 처리한다([CODE2]).
+  + getNaverSearch(node, srcText, 1, 100) : 1부터 100개의 검색 결과를 처리한다.([CODE 1])
+  + getPostData(): 검색 결과 한 개를 처리한다([CODE 2]).
   + json.dump(): 객체를 JSON 형식으로 변환한다.
 
 2. [CODE 1] url 접속을 요청하고 응답을 받아서 반환하는 부분 작성
@@ -100,3 +100,18 @@
 - **메서드**
   + `getRequestUrl(url)`: [CODE1]을 호출하여 url 요청에 대한 응답을 받음
   + `json.loads(responseDecode)`: 응답 객체를 파이썬이 처리할 수 있는 JSON 형식으로 반환
+
+4. [CODE 3] JSON 형식의 응답 데이터를 필요한 항목만 정리하여 딕셔너리 리스트인 jsonResult를 구성하고 반환
+- **매개 변수**
+  + post: 응답으로 받은 검색 결과 데이터 중에서 결과 한 개를 저장한 객체
+  + jsonResult: 필요한 부분만 저장하여 반환할 리스트 객체
+  + cnt: 현재 작업 중인 검색 결과의 번호
+- **지역 변수**
+  + post['title']: post 객체의 title 항목에 저장된 값
+  + post['description']: post 객체의 description 항목에 저장된 값
+  + post['originallink']: post 객체의 originallink 항목에 저장된 값
+  + post['link']: post 객체의 link 항목에 저장된 값
+- **메서드**
+  + `datatime.datatime.strptime()`: 문자열을 날짜 객체 형식으로 변환
+  + `pDate.strftime()`: 날짜 객체의 표시 형식을 지정
+  + `jsonResult.append()`: 리스트 객체인 jsonResult에 원소를 추가
