@@ -12,7 +12,7 @@
 
 ### Part #2 빅데이터 분석 - 준비
 - [[Chapter #4](https://github.com/kwhong95/python-bigdata-analysis/tree/master/Chapter4)]파이썬 프로그래밍 기초
-- [Chapter #5] 파이썬 크롤링 - API 이용
+- [[Chapter #5](https://github.com/kwhong95/python-bigdata-analysis/tree/master/Chapter5)] 파이썬 크롤링 - API 이용
 - [Chapter #6] 파이썬 크롤링 - 라이브러리 이용
 
 ### Part #3 빅데이터 분석 - 기본 프로젝트

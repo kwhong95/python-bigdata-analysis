@@ -115,3 +115,6 @@
   + `datatime.datatime.strptime()`: 문자열을 날짜 객체 형식으로 변환
   + `pDate.strftime()`: 날짜 객체의 표시 형식을 지정
   + `jsonResult.append()`: 리스트 객체인 jsonResult에 원소를 추가
+
+
+## 02. 공공데이터 API 기반 크롤링
