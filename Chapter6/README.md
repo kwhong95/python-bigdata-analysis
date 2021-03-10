@@ -6,6 +6,7 @@ BeautifulSoup 라이브러리를 사용한다.
 
 ### 1. 정적 웹페이지 크롤링 준비
 1. BeautifulSoup 연습하기 1
+> HTML Parsing
 ```
 pip3 install beautifulsoup4
 ```
@@ -13,4 +14,17 @@ pip3 install beautifulsoup4
 ```
 from bs4 import BeautifulSoup
 ```
+
+```py
+soup = BeautifulSoup(html, 'html.parser')
+```
+
+2. BeautifulSoup 연습하기 2
+> Tag Pasing(코드 참조)
+
+- 1️⃣ `attrs`: 속성 이름과 속성값으로 딕셔너리 구성
+- 2️⃣ `find()` : 속성을 이용하여 특정 태그 파싱
+- 3️⃣ `select()` : 지정한 태그를 모두 파싱하여 리스트 구성
+  + `태그#id 속성값`
+  + `태그.class 속성값`
 
