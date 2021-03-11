@@ -34,3 +34,10 @@ soup = BeautifulSoup(html, 'html.parser')
 
 #### 2. 웹 페이지 분석하기
 > 할리스 커피의 전국 매장 정보 크롤링하기
+
+## 02. 동적 웹 페이지 크롤링
+
+### 1. 동적 웹 페이지 크롤링 준비
+```
+pip3 install selenium
+```
