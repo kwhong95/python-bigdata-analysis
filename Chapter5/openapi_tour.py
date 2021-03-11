@@ -6,7 +6,7 @@ import time
 import json
 import pandas as pd
 
-ServiceKey = "mQ12y4QAfbuZL2fpRcPbVSTKZY%2BoEy6pNjTBVz1wFY6Wd9BEkEJ6a0o85TUBK6o9NXHaF6c%2B6FZ%2BshGbhzAygw%3D%3D"
+ServiceKey = "0g%2B2aUUoJCw7FsI6QAcac7nFoO7CAOqNgoJpEUKVV2P4jF5Tar1bDPMvPga8YX9ztWewmxKLsC%2BB9ogj5yr%2B4w%3D%3D"
 
 def getRequestUrl(url):
   req = urllib.request.Request(url)
@@ -56,7 +56,7 @@ def getTourismStatsService(nat_cd, ed_cd, nStartYear, nEndYear):
       ed = jsonData['response']['body']['items']['item']['ed']
       print('[ %s_%s : %s ]' % (natName, yyyymm, num))
       print('--------------------------------')
-      jsonResult.append({'nat_name': natName, 'nat_cd': nat_cd, 'yyyymm': yyyymmm, 'visit_cnt': num})
+      jsonResult.append({'nat_name': natName, 'nat_cd': nat_cd, 'yyyymm': yyyymm, 'visit_cnt': num})
       result.append([natName, nat_cd, yyyymm, num])
   return (jsonResult, result, natName, ed, dataEND)
 
